@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Redact </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="text-center">Redact users</h1>
+<form th:action="@{/admin/edit/}" th:object="${user}" method="post" style="max-width: 500px;margin: 0 auto;" >
+    <div class="border">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">ID: </label>
+            <input    name="userdId" id="userdId" th:value="${user.getUserdId()}">
+        </div>
+    </div>
+    <div class="border">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Name: </label>
+            <input   name="name" id="name" th:value="${user.getName()}">
+        </div>
+    </div>
+
+    <div class="border">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Password: </label>
+            <input  name="pass" id="pass" th:value="${user.getPass()}">
+        </div>
+    </div>
+
+    <div class="border">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Email: </label>
+            <input  name="mail" id="mail" th:value="${user.getMail()}">
+        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="text-center">  Apply changes </button>
+    </div>
+</form>
+</body>
+</html>
